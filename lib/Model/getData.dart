@@ -8,7 +8,10 @@ class GetAllData {
   int? id;
   String? nodeId;
   int? number;
+  String? body;
   String? title;
+  String? createdAt;
+  String? updatedAt;
   User? user;
 
   GetAllData(
@@ -21,7 +24,10 @@ class GetAllData {
       this.id,
       this.nodeId,
       this.number,
+      this.body,
       this.title,
+      this.createdAt,
+      this.updatedAt,
       this.user});
 
   GetAllData.fromJson(Map<String, dynamic> json) {
@@ -34,7 +40,10 @@ class GetAllData {
     id = json['id'];
     nodeId = json['node_id'];
     number = json['number'];
+    body = json['body'];
     title = json['title'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
     user = json['user'] != null ? new User.fromJson(json['user']) : null;
   }
 
@@ -49,7 +58,10 @@ class GetAllData {
     data['id'] = this.id;
     data['node_id'] = this.nodeId;
     data['number'] = this.number;
+    data['body'] = this.body;
     data['title'] = this.title;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
     if (this.user != null) {
       data['user'] = this.user!.toJson();
     }
